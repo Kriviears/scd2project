@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'khari_dbt_project'
+name: 'khari_dbt_workshop'
 version: '1.0.0'
 config-version: 2
 
@@ -37,11 +37,11 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   khari_dbt_workshop:
-      example:
-          schema: example 
-     silver:
-          schema: silver
-          materialized: table
-      gold:
-          schema: gold
-          materialized: view
+    example:
+      +schema: example 
+    silver:
+      +schema: silver
+      +materialized: table
+    gold:
+      +schema: gold
+      +materialized: view
