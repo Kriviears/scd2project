@@ -1,7 +1,5 @@
 {% macro macros_copy_csv(table_nm) %} 
- 
 delete from {{var ('rawhist_db') }}.{{var ('wrk_schema')}}.{{ table_nm }};
- 
 COPY INTO {{var ('rawhist_db') }}.{{var ('wrk_schema')}}.{{ table_nm }} 
 FROM 
 (
@@ -24,7 +22,5 @@ FROM @{{ var('stage_name') }}
 )
 FILE_FORMAT = {{var ('file_format_json') }}
 PURGE={{ var('purge_status') }}
-FORCE = TRUE
-;
- 
+FORCE = TRUE;
 {% endmacro %}
